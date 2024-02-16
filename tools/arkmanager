@@ -1700,10 +1700,10 @@ doInstall() {
     fi
   fi
 
-  cd "$steamcmdroot"
   echo -n "Installing ARK server"
   # install the server
   doDownloadSteamCMD
+  cd "$steamcmdroot"
   runSteamCMDAppUpdate "$arkserverroot" validate
   if [ $? -eq 5 ]; then
     echo "User ${steamlogin:-anonymous} login failed - please login to steamcmd manually"
